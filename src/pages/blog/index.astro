@@ -1,0 +1,39 @@
+---
+import PostCard from "../../components/PostCard.astro";
+
+const allPosts = await Astro.glob("./*.md");
+---
+
+<div class="container">
+    <h1 class="h1">Posts</h1>
+
+    <div class="post-container">
+        {
+            allPosts.map((post) => (
+                <PostCard
+                    frontmatter={post.frontmatter}
+                    url={post.url}
+                    tagType="h2"
+                />
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    * {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		min-height: 100vh;
+		font-family: "Orbitron Variable", sans-serif;
+		background: black;
+	}
+
+    .container {
+        width: 100%;
+    }
+</style>
