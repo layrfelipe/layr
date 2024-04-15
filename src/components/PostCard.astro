@@ -1,10 +1,6 @@
 ---
-import { Image } from "astro:assets";
-
-// component imports
-// import Link from "./Link.astro";
-
-import { slugify, formatDate } from "../js/utils";
+import { formatDate } from "../js/utils";
+import '@fontsource/roboto';
 
 const { frontmatter, url } = Astro.props;
 
@@ -29,6 +25,9 @@ const { title, date, author, image, description, category } = frontmatter;
 </article>
 
 <style lang="scss">
+  .card {
+    font-family: 'Roboto', sans-serif;
+  }
   @media (max-width: 576px) {
     .card {
       display: flex;
@@ -41,6 +40,7 @@ const { title, date, author, image, description, category } = frontmatter;
       border-bottom-right-radius: 1rem;
       box-shadow: 10px 8px 8px -2px #151515;
       margin-bottom: 2rem;
+      font-family: "";
 
       a {
         color: white;
@@ -76,6 +76,7 @@ const { title, date, author, image, description, category } = frontmatter;
           transition: .25s ease-in-out;
           margin-top: 1rem;
           font-size: 1.25rem;
+          font-family: "Orbitron Variable", sans-serif;
 
           &:hover {
             color: #cbcbcb;
@@ -146,6 +147,7 @@ const { title, date, author, image, description, category } = frontmatter;
           transition: .25s ease-in-out;
           margin-top: 1rem;
           font-size: 1.25rem;
+          font-family: "Orbitron Variable", sans-serif;
 
           &:hover {
             color: #cbcbcb;
@@ -214,6 +216,7 @@ const { title, date, author, image, description, category } = frontmatter;
           transition: .25s ease-in-out;
           margin-top: 1rem;
           font-size: 1.25rem;
+          font-family: "Orbitron Variable", sans-serif;
 
           &:hover {
             color: #cbcbcb;
@@ -282,6 +285,7 @@ const { title, date, author, image, description, category } = frontmatter;
           transition: .25s ease-in-out;
           margin-top: 1rem;
           font-size: 1.25rem;
+          font-family: "Orbitron Variable", sans-serif;
 
           &:hover {
             color: #cbcbcb;
@@ -350,6 +354,7 @@ const { title, date, author, image, description, category } = frontmatter;
           transition: .25s ease-in-out;
           margin-top: 1rem;
           font-size: 1.25rem;
+          font-family: "Orbitron Variable", sans-serif;
 
           &:hover {
             color: #cbcbcb;
@@ -418,6 +423,7 @@ const { title, date, author, image, description, category } = frontmatter;
           transition: .25s ease-in-out;
           margin-top: 1rem;
           font-size: 1.5rem;
+          font-family: "Orbitron Variable", sans-serif;
 
           &:hover {
             color: #cbcbcb;
