@@ -1,15 +1,15 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-title: Uma breve apresentação
+title: Como eu fiz este site?
 date: 2024-04-14
 author: Layr Felipe
 image: {
   src: "/images/code.webp",
   alt: "Imagem de uma tag HTML vazia, branca e fechada em si mesma sobre fundo azul claro"
 }
-description: Saiba mais sobre quem eu sou e como cheguei até aqui
+description: Descubra o potencial do framework Astro e como o utilizei para desenvolver este site
 draft: false
-category: Sobre mim
+category: Astro
 ---
 
 Nisi duis ex aliqua eu officia eiusmod duis magna pariatur. Irure laborum qui aliqua nulla esse cillum laborum aliquip nulla elit. Id id Lorem duis irure cillum culpa. Nulla sint et aliqua velit do. Nulla sit sit proident consectetur enim ullamco aliqua in reprehenderit ullamco officia.

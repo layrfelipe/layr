@@ -1,524 +1,550 @@
 ---
-
 import { Image } from 'astro:assets';
-import setup from "../images/setup.png";
 import me from "../images/me.jpeg";
 import { Icon } from 'astro-icon/components'
 import '@fontsource-variable/orbitron';
-
+import MainLayout from '../layouts/MainLayout.astro';
 ---
-
-<html lang="pt-BR">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>A BR Dev website</title>
-	</head>
-	<body>
-		<div id="above-the-fold">
-			<section id="left">
-				<Image id="me-img" src={me} alt="Layr Felipe"/>
-				<div id="social-links">
-					<a href="https://github.com/layrfelipe" rel="noreferrer" target="_blank"><Icon name="mdi:github" /></a>
-					<a href="https://linkedin.com/in/layr-felipe/" rel="noreferrer" target="_blank"><Icon name="mdi:linkedin" /></a>
-					<a href="https://instagram.com/layrfelipe" rel="noreferrer" target="_blank"><Icon name="mdi:instagram" /></a>
-				</div>
-				<h1>Olá! Meu nome é <span>Layr Felipe</span> e sou um desenvolvedor full stack do Rio de Janeiro.</h1>
-				<button>Site em desenvolvimento</button>
-			</section>
-
-			<section id="right">
-				<Image id="setup-img" src={setup} alt="Developer setup"/>
-			</section>
+<MainLayout>
+	<div id="above-the-fold">
+		<Image id="me-img" src={me} alt="Layr Felipe"/>
+		<div id="social-links">
+			<a href="https://github.com/layrfelipe" rel="noreferrer" target="_blank"><Icon name="mdi:github" /></a>
+			<a href="https://linkedin.com/in/layr-felipe/" rel="noreferrer" target="_blank"><Icon name="mdi:linkedin" /></a>
+			<a href="https://instagram.com/layrfelipe" rel="noreferrer" target="_blank"><Icon name="mdi:instagram" /></a>
 		</div>
-	</body>
-</html>
+		<h1>Olá! Meu nome é <span>Layr Felipe</span> e sou um desenvolvedor full stack do Rio de Janeiro.</h1>
+
+		<div class="loader"/>
+		<button>Site em desenvolvimento</button>
+	</div>
+</MainLayout>
 
 <style lang="scss">
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
+	@keyframes l7-1 {
+		0%,
+		100%  {background-position: 0 -50px,100% -50px}
+		17.5% {background-position: 0 100%,100% -50px,0 -50px,100% -50px}
+		35%   {background-position: 0 100%,100% 100% ,0 -50px,100% -50px}
+		52.5% {background-position: 0 100%,100% 100% ,0 calc(100% - 16px),100% -50px}
+		70%,
+		98%  {background-position: 0 100%,100% 100% ,0 calc(100% - 16px),100% calc(100% - 16px)}
 	}
 
-	body {
-		width: 100%;
-		min-height: 100vh;
-		font-family: "Orbitron Variable", sans-serif;
-		background: black;
+	@keyframes l7-2 {
+		0%,70% {transform:translate(0)}
+		100%  {transform:translate(200%)}
 	}
 
 	@media (max-width: 576px) {
 		#above-the-fold {
-			width: 100%;
-			height: 100vh;
-			background: black;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
-			padding: 2rem 1rem;
-	
-			section {
-				width: 100%;
+			width: 100%;
+			padding-top: 4rem;
+
+			#me-img {
+				width: 7.5rem;
+				height: 7.5rem;
+				border-radius: 50%;
+				border: 2px solid #b9b9b9;
+				padding: .5rem;
+			}
+
+			#social-links {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-	
-				#me-img {
-					width: 8rem;
-					height: 8rem;
-					border-radius: 50%;
-					border: 2px solid #b9b9b9;
-					padding: .5rem;
-				}
-	
-				#social-links {
-					display: flex;
-					justify-content: center;
-					margin-top: 1rem;
-	
-					[data-icon] {
-						color: white;
-						font-size: 2rem;
-						margin: 0 1rem;
-					}
-				}
-	
-				h1 {
+				justify-content: space-evenly;
+				width: 15rem;
+				margin-top: 2rem;
+
+				[data-icon] {
 					color: #b9b9b9;
-					font-size: 1rem;
-					text-align: center;
-					margin-top: 2rem;
-	
-					span {
+					font-size: 2rem;
+					cursor: pointer;
+					transition: .25s ease;
+
+					&:hover {
 						color: white;
 					}
-				}
-	
-				button {
-					margin-top: 2rem;
-					font-size: .8rem;
-					padding: .75rem;
-					font-family: "Orbitron Variable", sans-serif;
-					font-weight: 700;
-					color: white;
-					border-radius: 1rem;
-					cursor: pointer;
-					border: none;
-					background: linear-gradient(to right, #de1c3c, purple);
-				}
-				
-				#setup-img {
-					width: 75vw;
-					border-radius: 1rem;
-					height: auto;
-					margin-top: 2rem;
 				}
 			}
 
-			#right {
-				display: none;
-				visibility: hidden;
+			h1 {
+				color: #b9b9b9;
+				font-size: 1.25rem;
+				text-align: center;
+				margin-top: 2.5rem;
+				width: 80%;
+
+				span {
+					color: white;
+				}
+			}
+
+			.loader {
+				width: 200px;
+				height: 30px;
+				box-shadow: 0 3px 0 #b9b9b9;
+				position: relative;
+				clip-path: inset(-40px 0 -5px);
+				margin-top: 4rem;
+			}
+
+			.loader:before {
+				content: "";
+				position: absolute;
+				inset: auto calc(50% - 17px) 0;
+				height: 50px;
+				--g:no-repeat linear-gradient(to left, #da0a2c, purple);
+				background: var(--g),var(--g),var(--g),var(--g);
+				background-size: 16px 14px;
+				animation:
+					l7-1 2s infinite linear,
+					l7-2 2s infinite linear;
+			}
+
+			button {
+				margin-top: 4rem;
+				font-size: 1rem;
+				font-family: "Orbitron Variable", sans-serif;
+				font-weight: 700;
+				padding: 1rem 3rem;
+				color: white;
+				border-radius: 1rem;
+				cursor: pointer;
+				border: none;
+				background: linear-gradient(to right, #da0a2c, purple);
 			}
 		}
 	}
 
 	@media (min-width: 577px) and (max-width: 768px) {
 		#above-the-fold {
-			width: 100%;
-			height: 100vh;
-			background: black;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
-			padding: 4rem 2rem;
-	
-			section {
-				width: 100%;
+			width: 100%;
+			padding-top: 4rem;
+
+			#me-img {
+				width: 12.5rem;
+				height: 12.5rem;
+				border-radius: 50%;
+				border: 2px solid #b9b9b9;
+				padding: .5rem;
+			}
+
+			#social-links {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-	
-				#me-img {
-					width: 15rem;
-					height: 15rem;
-					border-radius: 50%;
-					border: 2px solid #b9b9b9;
-					padding: .5rem;
-				}
-	
-				#social-links {
-					display: flex;
-					justify-content: center;
-					margin-top: 2rem;
-	
-					[data-icon] {
-						color: white;
-						font-size: 3rem;
-						margin: 0 1rem;
-					}
-				}
-	
-				h1 {
+				justify-content: space-evenly;
+				width: 20rem;
+				margin-top: 2.5rem;
+
+				[data-icon] {
 					color: #b9b9b9;
-					font-size: 1.5rem;
-					text-align: center;
-					margin-top: 2rem;
-	
-					span {
+					font-size: 3rem;
+					cursor: pointer;
+					transition: .25s ease;
+
+					&:hover {
 						color: white;
 					}
-				}
-	
-				button {
-					margin-top: 4rem;
-					font-size: 1.5rem;
-					padding: 1rem 2rem;
-					font-family: "Orbitron Variable", sans-serif;
-					font-weight: 700;
-					color: white;
-					border-radius: 1rem;
-					cursor: pointer;
-					border: none;
-					background: linear-gradient(to right, #de1c3c, purple);
 				}
 			}
 
-			#right {
-				display: none;
-				visibility: hidden;
+			h1 {
+				color: #b9b9b9;
+				font-size: 1.75rem;
+				text-align: center;
+				margin-top: 2.5rem;
+				width: 75%;
+
+				span {
+					color: white;
+				}
+			}
+
+			.loader {
+				width: 200px;
+				height: 30px;
+				box-shadow: 0 3px 0 #b9b9b9;
+				position: relative;
+				clip-path: inset(-40px 0 -5px);
+				margin-top: 4rem;
+			}
+
+			.loader:before {
+				content: "";
+				position: absolute;
+				inset: auto calc(50% - 17px) 0;
+				height: 50px;
+				--g:no-repeat linear-gradient(to left, #da0a2c, purple);
+				background: var(--g),var(--g),var(--g),var(--g);
+				background-size: 16px 14px;
+				animation:
+					l7-1 2s infinite linear,
+					l7-2 2s infinite linear;
+			}
+
+			button {
+				margin-top: 4rem;
+				font-size: 1.5rem;
+				font-family: "Orbitron Variable", sans-serif;
+				font-weight: 900;
+				padding: 1rem 3rem;
+				color: white;
+				border-radius: 1rem;
+				cursor: pointer;
+				border: none;
+				background: linear-gradient(to right, #da0a2c, purple);
 			}
 		}
 	}
 
 	@media (min-width: 769px) and (max-width: 900px) {
 		#above-the-fold {
-			width: 100%;
-			height: 100vh;
-			background: black;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
-			padding: 4rem 2rem;
-	
-			section {
-				width: 100%;
+			width: 100%;
+			padding-top: 4rem;
+
+			#me-img {
+				width: 15rem;
+				height: 15rem;
+				border-radius: 50%;
+				border: 2px solid #b9b9b9;
+				padding: .5rem;
+			}
+
+			#social-links {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-	
-				#me-img {
-					width: 15rem;
-					height: 15rem;
-					border-radius: 50%;
-					border: 2px solid #b9b9b9;
-					padding: .5rem;
-				}
-	
-				#social-links {
-					display: flex;
-					justify-content: center;
-					margin-top: 2rem;
-	
-					[data-icon] {
-						color: white;
-						font-size: 3rem;
-						margin: 0 1rem;
-					}
-				}
-	
-				h1 {
+				justify-content: space-evenly;
+				width: 20rem;
+				margin-top: 2rem;
+
+				[data-icon] {
 					color: #b9b9b9;
-					font-size: 1.5rem;
-					text-align: center;
-					margin-top: 2rem;
-	
-					span {
+					font-size: 3rem;
+					cursor: pointer;
+					transition: .25s ease;
+
+					&:hover {
 						color: white;
 					}
-				}
-	
-				button {
-					margin-top: 4rem;
-					font-size: 1.5rem;
-					padding: 1rem 2rem;
-					font-family: "Orbitron Variable", sans-serif;
-					font-weight: 700;
-					color: white;
-					border-radius: 1rem;
-					cursor: pointer;
-					border: none;
-					background: linear-gradient(to right, #de1c3c, purple);
-				}
-				
-				#setup-img {
-					width: 50vw;
-					height: auto;
-					border-radius: 1rem;
-					margin-top: 4rem;
 				}
 			}
 
-			#right {
-				display: none;
-				visibility: hidden;
+			h1 {
+				color: #b9b9b9;
+				font-size: 1.75rem;
+				text-align: center;
+				margin-top: 2.5rem;
+				width: 75%;
+
+				span {
+					color: white;
+				}
+			}
+
+			.loader {
+				width: 200px;
+				height: 30px;
+				box-shadow: 0 3px 0 #b9b9b9;
+				position: relative;
+				clip-path: inset(-40px 0 -5px);
+				margin-top: 4rem;
+			}
+
+			.loader:before {
+				content: "";
+				position: absolute;
+				inset: auto calc(50% - 17px) 0;
+				height: 50px;
+				--g:no-repeat linear-gradient(to left, #da0a2c, purple);
+				background: var(--g),var(--g),var(--g),var(--g);
+				background-size: 16px 14px;
+				animation:
+					l7-1 2s infinite linear,
+					l7-2 2s infinite linear;
+			}
+
+			button {
+				margin-top: 4rem;
+				font-size: 1.5rem;
+				font-family: "Orbitron Variable", sans-serif;
+				font-weight: 900;
+				padding: 1rem 3rem;
+				color: white;
+				border-radius: 1rem;
+				cursor: pointer;
+				border: none;
+				background: linear-gradient(to right, #da0a2c, purple);
 			}
 		}
 	}
 
 	@media (min-width: 901px) and (max-width: 1024px){
 		#above-the-fold {
-			width: 100%;
-			height: 100vh;
-			background: black;
 			display: flex;
-	
-			section {
-				width: 100%;
-				height: 100%;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			padding-top: 4rem;
+
+			#me-img {
+				width: 15rem;
+				height: 15rem;
+				border-radius: 50%;
+				border: 2px solid #b9b9b9;
+				padding: .5rem;
+			}
+
+			#social-links {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-	
-				#me-img {
-					width: 10rem;
-					height: 10rem;
-					border-radius: 50%;
-					border: 2px solid #b9b9b9;
-					padding: .5rem;
-				}
-	
-				#social-links {
-					display: flex;
-					justify-content: space-evenly;
-					width: 15rem;
-					margin-top: 2rem;
-	
-					[data-icon] {
-						color: #b9b9b9;
-						font-size: 2rem;
-						cursor: pointer;
-						transition: .25s ease;
-	
-						&:hover {
-							color: white;
-						}
-					}
-				}
-	
-				h1 {
+				justify-content: space-evenly;
+				width: 20rem;
+				margin-top: 2rem;
+
+				[data-icon] {
 					color: #b9b9b9;
-					font-size: 1.75rem;
-					text-align: center;
-					margin-top: 2rem;
-	
-					span {
+					font-size: 3rem;
+					cursor: pointer;
+					transition: .25s ease;
+
+					&:hover {
 						color: white;
 					}
 				}
-	
-				button {
-					margin-top: 2rem;
-					font-size: 1rem;
-					font-family: "Orbitron Variable", sans-serif;
-					font-weight: 900;
-					padding: 1rem 3rem;
+			}
+
+			h1 {
+				color: #b9b9b9;
+				font-size: 1.75rem;
+				text-align: center;
+				margin-top: 2.5rem;
+				width: 75%;
+
+				span {
 					color: white;
-					border-radius: 1rem;
-					cursor: pointer;
-					border: none;
-					background: linear-gradient(to right, #da0a2c, purple);
-				}
-				
-				#setup-img {
-					width: 100%;
-					max-height: 100%;
-					align-self: flex-end;
 				}
 			}
 
-			#left {
-				width: 50%;
-				padding: 0 2rem;
+			.loader {
+				width: 200px;
+				height: 30px;
+				box-shadow: 0 3px 0 #b9b9b9;
+				position: relative;
+				clip-path: inset(-40px 0 -5px);
+				margin-top: 4rem;
 			}
 
-			#right {
-				width: 50%;
+			.loader:before {
+				content: "";
+				position: absolute;
+				inset: auto calc(50% - 17px) 0;
+				height: 50px;
+				--g:no-repeat linear-gradient(to left, #da0a2c, purple);
+				background: var(--g),var(--g),var(--g),var(--g);
+				background-size: 16px 14px;
+				animation:
+					l7-1 2s infinite linear,
+					l7-2 2s infinite linear;
+			}
+
+			button {
+				margin-top: 4rem;
+				font-size: 1.5rem;
+				font-family: "Orbitron Variable", sans-serif;
+				font-weight: 900;
+				padding: 1rem 3rem;
+				color: white;
+				border-radius: 1rem;
+				cursor: pointer;
+				border: none;
+				background: linear-gradient(to right, #da0a2c, purple);
 			}
 		}
 	}
 
 	@media (min-width: 1025px) and (max-width: 1600px){
 		#above-the-fold {
-			width: 100%;
-			height: 100vh;
-			background: black;
 			display: flex;
-	
-			section {
-				width: 100%;
-				height: 100%;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			padding-top: 2rem;
+
+			#me-img {
+				width: 10rem;
+				height: 10rem;
+				border-radius: 50%;
+				border: 2px solid #b9b9b9;
+				padding: .5rem;
+			}
+
+			#social-links {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-	
-				#me-img {
-					width: 10rem;
-					height: 10rem;
-					border-radius: 50%;
-					border: 2px solid #b9b9b9;
-					padding: .5rem;
-				}
-	
-				#social-links {
-					display: flex;
-					justify-content: space-evenly;
-					width: 15rem;
-					margin-top: 2rem;
-	
-					[data-icon] {
-						color: #b9b9b9;
-						font-size: 2rem;
-						cursor: pointer;
-						transition: .25s ease;
-	
-						&:hover {
-							color: white;
-						}
-					}
-				}
-	
-				h1 {
+				justify-content: space-evenly;
+				width: 15rem;
+				margin-top: 2rem;
+
+				[data-icon] {
 					color: #b9b9b9;
 					font-size: 2rem;
-					text-align: center;
-					margin-top: 2rem;
-	
-					span {
+					cursor: pointer;
+					transition: .25s ease;
+
+					&:hover {
 						color: white;
 					}
 				}
-	
-				button {
-					margin-top: 2rem;
-					font-size: 1.25rem;
-					font-family: "Orbitron Variable", sans-serif;
-					font-weight: 900;
-					padding: 1rem 3rem;
+			}
+
+			h1 {
+				color: #b9b9b9;
+				font-size: 1.5rem;
+				text-align: center;
+				margin-top: 2rem;
+				width: 50%;
+
+				span {
 					color: white;
-					border-radius: 1rem;
-					cursor: pointer;
-					border: none;
-					background: linear-gradient(to right, #da0a2c, purple);
-				}
-				
-				#setup-img {
-					width: 100%;
-					max-height: 100%;
-					align-self: flex-end;
 				}
 			}
 
-			#left {
-				width: 55%;
-				padding: 0 2rem;
+			.loader {
+				width: 200px;
+				height: 30px;
+				box-shadow: 0 3px 0 #b9b9b9;
+				position: relative;
+				clip-path: inset(-40px 0 -5px);
+				margin-top: 2rem;
 			}
 
-			#right {
-				width: 45%;
+			.loader:before {
+				content: "";
+				position: absolute;
+				inset: auto calc(50% - 17px) 0;
+				height: 50px;
+				--g:no-repeat linear-gradient(to left, #da0a2c, purple);
+				background: var(--g),var(--g),var(--g),var(--g);
+				background-size: 16px 14px;
+				animation:
+					l7-1 2s infinite linear,
+					l7-2 2s infinite linear;
+			}
+
+			button {
+				margin-top: 2rem;
+				font-size: 1.25rem;
+				font-family: "Orbitron Variable", sans-serif;
+				font-weight: 900;
+				padding: 1rem 3rem;
+				color: white;
+				border-radius: 1rem;
+				cursor: pointer;
+				border: none;
+				background: linear-gradient(to right, #da0a2c, purple);
 			}
 		}
 	}
 
 	@media (min-width: 1601px) {
 		#above-the-fold {
-			width: 100%;
-			height: 100vh;
-			background: black;
 			display: flex;
-	
-			section {
-				width: 100%;
-				height: 100%;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			padding-top: 4rem;
+
+			#me-img {
+				width: 12.5rem;
+				height: 12.5rem;
+				border-radius: 50%;
+				border: 2px solid #b9b9b9;
+				padding: .5rem;
+			}
+
+			#social-links {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-	
-				#me-img {
-					width: 10rem;
-					height: 10rem;
-					border-radius: 50%;
-					border: 2px solid #b9b9b9;
-					padding: .5rem;
-				}
-	
-				#social-links {
-					display: flex;
-					justify-content: space-evenly;
-					width: 15rem;
-					margin-top: 2rem;
-	
-					[data-icon] {
-						color: #b9b9b9;
-						font-size: 2rem;
-						cursor: pointer;
-						transition: .25s ease;
-	
-						&:hover {
-							color: white;
-						}
-					}
-				}
-	
-				h1 {
+				justify-content: space-evenly;
+				width: 20rem;
+				margin-top: 2rem;
+
+				[data-icon] {
 					color: #b9b9b9;
-					font-size: 2rem;
-					text-align: center;
-					margin-top: 2rem;
-	
-					span {
+					font-size: 2.5rem;
+					cursor: pointer;
+					transition: .25s ease;
+
+					&:hover {
 						color: white;
 					}
 				}
-	
-				button {
-					margin-top: 2rem;
-					font-size: 1.25rem;
-					font-family: "Orbitron Variable", sans-serif;
-					font-weight: 900;
-					padding: 1rem 3rem;
+			}
+
+			h1 {
+				color: #b9b9b9;
+				font-size: 2rem;
+				text-align: center;
+				margin-top: 2.5rem;
+				width: 50%;
+
+				span {
 					color: white;
-					border-radius: 1rem;
-					cursor: pointer;
-					border: none;
-					background: linear-gradient(to right, #da0a2c, purple);
-				}
-				
-				#setup-img {
-					width: 100%;
-					max-height: 100%;
-					align-self: flex-end;
 				}
 			}
 
-			#left {
-				width: 60%;
-				padding: 0 2rem;
+			.loader {
+				width: 200px;
+				height: 30px;
+				box-shadow: 0 3px 0 #b9b9b9;
+				position: relative;
+				clip-path: inset(-40px 0 -5px);
+				margin-top: 4rem;
 			}
 
-			#right {
-				width: 40%;
+			.loader:before {
+				content: "";
+				position: absolute;
+				inset: auto calc(50% - 17px) 0;
+				height: 50px;
+				--g:no-repeat linear-gradient(to left, #da0a2c, purple);
+				background: var(--g),var(--g),var(--g),var(--g);
+				background-size: 16px 14px;
+				animation:
+					l7-1 2s infinite linear,
+					l7-2 2s infinite linear;
+			}
+
+			@keyframes l7-1 {
+				0%,
+				100%  {background-position: 0 -50px,100% -50px}
+				17.5% {background-position: 0 100%,100% -50px,0 -50px,100% -50px}
+				35%   {background-position: 0 100%,100% 100% ,0 -50px,100% -50px}
+				52.5% {background-position: 0 100%,100% 100% ,0 calc(100% - 16px),100% -50px}
+				70%,
+				98%  {background-position: 0 100%,100% 100% ,0 calc(100% - 16px),100% calc(100% - 16px)}
+			}
+
+			@keyframes l7-2 {
+				0%,70% {transform:translate(0)}
+				100%  {transform:translate(200%)}
+			}
+
+			button {
+				margin-top: 4rem;
+				font-size: 1.5rem;
+				font-family: "Orbitron Variable", sans-serif;
+				font-weight: 900;
+				padding: 1rem 3rem;
+				color: white;
+				border-radius: 1rem;
+				cursor: pointer;
+				border: none;
+				background: linear-gradient(to right, #da0a2c, purple);
 			}
 		}
 	}

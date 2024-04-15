@@ -1,27 +1,259 @@
 ---
-import { Image } from "astro:assets";
-import { slugify, formatDate } from "../js/utils";
+import { formatDate } from "../js/utils";
 const { category, title, author, date, image } = Astro.props;
 ---
 <header>
-  <div class="container">
-    <small>
-      <a href={`/category/${slugify(category)}/`} class="badge">{category}</a>
-    </small>
-    <h1 class="h2">{title}</h1>
-    <p>
-      by <a href={`/author/${slugify(author)}/`}>{author}</a> • {
-        formatDate(date)
-      }
-    </p>
+  <div class="content">
+    <span class="tag">{category}</span>
+    <h2>{title}</h2>
+    <span class="author">por {author}</a>, { formatDate(date) }</span>
   </div>
-  <Image
+
+  <img
     src={image.src}
     alt={image.alt}
-    width="1200"
-    height="600"
-    format="avif"
-    quality={80}
-    class="hero-image"
   />
 </header>
+
+<style lang="scss">
+  @media (max-width: 576px) {
+    header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .content {
+      color: white;
+      width: 90%;
+      
+      .tag {
+        background: #454545;
+        padding: .5rem;
+        border-radius: .5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 900;
+        margin: 2rem 0 1rem 0;
+      }
+
+      .author {
+        width: 100%;
+      }
+    }
+
+    img {
+      width: 75%;
+      margin-top: 2rem;
+    }
+  }
+  }
+
+	@media (min-width: 577px) and (max-width: 768px) {
+    header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .content {
+      color: white;
+      width: 60%;
+      
+      .tag {
+        background: #454545;
+        padding: .5rem;
+        border-radius: .5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin: 2rem 0 1rem 0;
+      }
+
+      .author {
+        width: 100%;
+        
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    img {
+      width: 75%;
+      margin-top: 2rem;
+    }
+  }     
+	}
+
+	@media (min-width: 769px) and (max-width: 900px) {
+    header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .content {
+      color: white;
+      width: 75%;
+      
+      .tag {
+        background: #454545;
+        padding: .5rem;
+        border-radius: .5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin: 2rem 0 1rem 0;
+      }
+
+      .author {
+        width: 100%;
+        
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    img {
+      width: 75%;
+      margin-top: 2rem;
+    }
+  }
+	}
+
+	@media (min-width: 901px) and (max-width: 1024px){
+    header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .content {
+      color: white;
+      width: 75%;
+      
+      .tag {
+        background: #454545;
+        padding: .5rem;
+        border-radius: .5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin: 2rem 0 1rem 0;
+      }
+
+      .author {
+        width: 100%;
+        
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    img {
+      width: 60%;
+      margin-top: 2rem;
+    }
+  }
+	}
+
+	@media (min-width: 1025px) and (max-width: 1600px){
+    header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .content {
+      color: white;
+      width: 60%;
+      
+      .tag {
+        background: #454545;
+        padding: .5rem;
+        border-radius: .5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin: 2rem 0 1rem 0;
+      }
+
+      .author {
+        width: 100%;
+        
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    img {
+      width: 50%;
+      margin-top: 2rem;
+    }
+  }  
+	}
+
+	@media (min-width: 1601px) {
+    header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .content {
+      color: white;
+      width: 60%;
+      
+      .tag {
+        background: #454545;
+        padding: .5rem;
+        border-radius: .5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin: 2rem 0 1rem 0;
+      }
+
+      .author {
+        width: 100%;
+        
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    img {
+      width: 50%;
+      margin-top: 2rem;
+    }
+  }
+	}
+</style>

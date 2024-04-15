@@ -1,15 +1,15 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-title: A Post about Important Items Of Life
-date: 2022-12-20
-author: Darnell McClure
+title: Comparando Astro com NextJS
+date: 2024-04-14
+author: Layr Felipe
 image: {
-  src: "/images/setup.webp",
-  alt: "A picture of a coder",
+  src: "/images/code.webp",
+  alt: "Imagem de uma tag HTML vazia, branca e fechada em si mesma sobre fundo azul claro"
 }
-description: Have you ever wondered what the most important items of life are? Well, wonder no more!
-draft: true
-category: Reference Docs
+description: Uma comparação entre Astro e NexJS
+draft: false
+category: Astro
 ---
 
 Nisi duis ex aliqua eu officia eiusmod duis magna pariatur. Irure laborum qui aliqua nulla esse cillum laborum aliquip nulla elit. Id id Lorem duis irure cillum culpa. Nulla sint et aliqua velit do. Nulla sit sit proident consectetur enim ullamco aliqua in reprehenderit ullamco officia.
