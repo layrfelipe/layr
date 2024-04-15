@@ -7,9 +7,9 @@ image: {
   src: "/images/code.webp",
   alt: "Imagem de uma tag HTML vazia, branca e fechada em si mesma sobre fundo azul claro"
 }
-description: Uma comparação entre Astro e NexJS
+description: Uma comparação entre Astro e NextJS
 draft: false
-category: Astro
+category: Astro | NextJS
 ---
 
 Nisi duis ex aliqua eu officia eiusmod duis magna pariatur. Irure laborum qui aliqua nulla esse cillum laborum aliquip nulla elit. Id id Lorem duis irure cillum culpa. Nulla sint et aliqua velit do. Nulla sit sit proident consectetur enim ullamco aliqua in reprehenderit ullamco officia.

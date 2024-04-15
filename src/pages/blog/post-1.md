@@ -7,7 +7,7 @@ image: {
   src: "/images/code.webp",
   alt: "Imagem de uma tag HTML vazia, branca e fechada em si mesma sobre fundo azul claro"
 }
-description: Saiba mais sobre quem eu sou e como cheguei até aqui
+description: Saiba mais sobre mim e meu trabalho
 draft: false
 category: Sobre mim
 ---
