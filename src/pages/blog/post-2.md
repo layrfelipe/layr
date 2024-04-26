@@ -7,17 +7,20 @@ image: {
   src: "/images/code.webp",
   alt: "Imagem de uma tag HTML vazia, branca e fechada em si mesma sobre fundo azul claro"
 }
-description: Descubra o potencial do framework Astro e como o utilizei para desenvolver este site
+description: Descubra o potencial do framework Astro, a minha escolha para este site
 draft: false
 category: Astro
 ---
 
-Nisi duis ex aliqua eu officia eiusmod duis magna pariatur. Irure laborum qui aliqua nulla esse cillum laborum aliquip nulla elit. Id id Lorem duis irure cillum culpa. Nulla sint et aliqua velit do. Nulla sit sit proident consectetur enim ullamco aliqua in reprehenderit ullamco officia.
+### Por que Astro?
+Arquitetura disruptiva, otimizações para SEO, carregamento super rápido e "tudo que há de bom". Esse é a receita secreta de um framework super poderoso.
 
-Ad ipsum velit sint enim exercitation mollit consequat elit mollit qui commodo aute. Laboris culpa voluptate aliquip incididunt duis. Cupidatat aliquip et sunt aute fugiat cupidatat irure voluptate. Occaecat officia et sunt.
+Astro: o web-framework perfeito para sites orientados por conteúdo. Com a arquitetura baseada em renderização por ilhas, o framework promete enviar o mínimo possível de JavaScript para o lado do cliente e assim oferecer uma performance surpreendente na experiência do usuário.
 
-Officia tempor voluptate enim consequat cillum aute fugiat cupidatat incididunt magna labore in commodo. Eiusmod nostrud non deserunt. Incididunt excepteur pariatur magna. Proident aute ad in velit labore enim sit cillum ad mollit proident et qui. Esse sunt ullamco ullamco ipsum enim eu esse id eu exercitation laboris magna Lorem. Anim nostrud officia anim velit do exercitation labore mollit excepteur excepteur ex.
+Ideal para Blogs, E-Commerces, Portfolios e diversos outros tipos de projetos orientados por conteúdo, o framework Astro tem suporte nativo a arquivos Markdown e MDX. Além disso, possui funcionalidades já carimbadas no mercado como roteamento baseado em arquivos, renderização mista (no servidor e no cliente), otimização automática de imagens etc.
 
-Ipsum adipisicing exercitation dolor pariatur labore qui. Culpa cupidatat ea elit eiusmod tempor ea qui dolor Lorem laborum adipisicing. Ad ea laboris qui cupidatat deserunt culpa. Nulla ex velit adipisicing proident fugiat deserunt sunt eu adipisicing sint incididunt quis qui. Nulla fugiat labore duis ullamco reprehenderit excepteur laboris tempor ullamco aliquip laborum aliqua. Est tempor nisi magna ut elit pariatur commodo.
+Outro ponto muito interessante do Astro é que ele é agnóstico para UIs: possui integrações oficiais para diversos frameworks como React, Vue, Svelte, Solid. Além, é claro, de possuir outras integrações como adaptadores de SSR, banco de dados e Tailwind.
 
-Labore commodo do incididunt amet ad et exercitation magna veniam veniam aute laboris excepteur occaecat Lorem. Fugiat in magna commodo magna nulla eu. Fugiat nulla aliqua sunt duis enim irure aliquip fugiat aliqua Lorem ad tempor incididunt proident incididunt. Labore fugiat tempor esse cillum voluptate culpa anim sunt consequat. Ipsum minim nostrud laborum sit aliquip duis officia consequat est. Fugiat mollit elit nulla. Sit minim est elit labore. Sunt eu pariatur pariatur ut deserunt nulla labore in non sit tempor voluptate ex.
+Há grande potencial do Astro se tornar um padrão de mercado devido à sua flexibilidade e excelente performance. Por isso, não tenha dúvidas que vale a pena mergulhar nos estudos.
+
+Visite o site https://astro.build/ e leia a documentação antes de desenvolver seu primeiro projeto!

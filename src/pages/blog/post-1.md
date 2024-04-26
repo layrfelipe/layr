@@ -1,23 +1,24 @@
 ---
-layout: "../../layouts/BlogPostLayout.astro"
-title: Uma breve apresentação
-date: 2024-04-14
-author: Layr Felipe
+layout: "../../layouts/BlogPostLayout.astro";
+title: Uma breve apresentação;
+date: 2024-04-14;
+author: Layr Felipe;
 image: {
   src: "/images/code.webp",
   alt: "Imagem de uma tag HTML vazia, branca e fechada em si mesma sobre fundo azul claro"
-}
-description: Saiba mais sobre mim e meu trabalho
-draft: false
-category: Sobre mim
+};
+description: Uma breve apresentação;
+draft: false;
+category: Sobre mim;
 ---
 
-Nisi duis ex aliqua eu officia eiusmod duis magna pariatur. Irure laborum qui aliqua nulla esse cillum laborum aliquip nulla elit. Id id Lorem duis irure cillum culpa. Nulla sint et aliqua velit do. Nulla sit sit proident consectetur enim ullamco aliqua in reprehenderit ullamco officia.
+### Hello, world!
+Olá, seja muito bem-vindo(a) ao meu website. Meu nome é Layr Felipe e atuo como desenvolvedor de software full stack há 2 anos. Atualmente, trabalho na startup umgrauemeio e sou sócio-fundador da software house Craft4Tech.
 
-Ad ipsum velit sint enim exercitation mollit consequat elit mollit qui commodo aute. Laboris culpa voluptate aliquip incididunt duis. Cupidatat aliquip et sunt aute fugiat cupidatat irure voluptate. Occaecat officia et sunt.
+Desenvolvi este site para expor meu trabalho, compartilhar conhecimentos e propor discussões interessantes junto à comunidade.
 
-Officia tempor voluptate enim consequat cillum aute fugiat cupidatat incididunt magna labore in commodo. Eiusmod nostrud non deserunt. Incididunt excepteur pariatur magna. Proident aute ad in velit labore enim sit cillum ad mollit proident et qui. Esse sunt ullamco ullamco ipsum enim eu esse id eu exercitation laboris magna Lorem. Anim nostrud officia anim velit do exercitation labore mollit excepteur excepteur ex.
+Por estar em uma etapa inicial de carreira, reconheço que tenho muito mais a aprender do que ensinar. Porém, também é fato que a melhor maneira de aprender algo é tentando ensinar. Foi assim que aprendi, de maneira auto-didata, praticamente tudo o que sei sobre programação.
 
-Ipsum adipisicing exercitation dolor pariatur labore qui. Culpa cupidatat ea elit eiusmod tempor ea qui dolor Lorem laborum adipisicing. Ad ea laboris qui cupidatat deserunt culpa. Nulla ex velit adipisicing proident fugiat deserunt sunt eu adipisicing sint incididunt quis qui. Nulla fugiat labore duis ullamco reprehenderit excepteur laboris tempor ullamco aliquip laborum aliqua. Est tempor nisi magna ut elit pariatur commodo.
+Aqui no blog falarei de maneira descontraída porém enriquecedora sobre os principais assuntos de meu interesse. Atualmente, tenho explorado alguns frameworks para Web2 (como NextJS e Astro) e desenvolvimento Web3 com Solidity e Scaffold ETH 2.0. Certamente estes serão assuntos que abordaremos por aqui.
 
-Labore commodo do incididunt amet ad et exercitation magna veniam veniam aute laboris excepteur occaecat Lorem. Fugiat in magna commodo magna nulla eu. Fugiat nulla aliqua sunt duis enim irure aliquip fugiat aliqua Lorem ad tempor incididunt proident incididunt. Labore fugiat tempor esse cillum voluptate culpa anim sunt consequat. Ipsum minim nostrud laborum sit aliquip duis officia consequat est. Fugiat mollit elit nulla. Sit minim est elit labore. Sunt eu pariatur pariatur ut deserunt nulla labore in non sit tempor voluptate ex.
+Espero que você tenha uma boa experiência e possa tirar valor do conteúdo que postarei por aqui. Te vejo no próximo post!
